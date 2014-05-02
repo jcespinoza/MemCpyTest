@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdio>
+#include <cstring>
 
 using namespace std;
 
@@ -9,6 +10,8 @@ int main()
     //Fixed lenght registries (49) with fixed lenght fields
     int aNumber = 18;
     char* aString = new char [40];
+    cout << "Type something\n";
+    cin >> aString;
     int anotherNumber = 20;
 
     //transform to bytes array
@@ -28,6 +31,11 @@ int main()
     cout << "Retrieving bytes\n";
     cout << dNumber << "\n";
     cout << dAnotherNumber << "\n";
+
+    //save to a file
+    FILE* file;
+    char buffer[strlen(aString)+2*sizeof(int)];
+    cout << "totalSize" << sizeof(buffer);
 
     return 0;
 }
